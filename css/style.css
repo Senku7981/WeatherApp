@@ -1,0 +1,70 @@
+@import './reset.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600&display=swap');
+
+
+body {
+    font-family: 'Montserrat',  sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px 50px;
+    background: linear-gradient(to right, #00c9ff, #92fe9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.20;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 460px;
+    height: 50px;
+    background-color: #FFFF;
+    border-radius: 5px;
+
+    color: #000;
+    font-size: 20px;
+    font-weight: 300;
+
+}
+
+
+.input {
+    padding: 13px 13px 13px 30px;
+    flex-grow: 1;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+    
+
+}
+
+
+.btn {
+    width: 100px;
+    height: 50px;
+    border-radius: 0px 5px 5px 0px;
+    background: #f6688e;
+
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+
+    transition: background 0.2s ease-in;
+}
+
+.btn:hover {
+    background: #ab64e5;
+}
