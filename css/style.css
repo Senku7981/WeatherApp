@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600&display=swap');
 
+html, body {
+    min-height: 100vh;
+}
+
 
 body {
     display: flex;
@@ -169,20 +173,19 @@ body {
 }
 
 .footer {
-    
+
     margin-top: auto;
     width: 100%;
-    text-align: center;
-    padding: 4px 15px;
+    padding: 4px 16px;
+    background: #F8F8F8;
     
-    background-color: #EEEEEE;
-    
-    line-height: 1;
     font-size: 20px;
+    line-height: 1;
+    text-align: center;
 }
+
 
 .footer a {
     color: #083D2A;
     text-decoration: none;
-
 }
