@@ -4,10 +4,20 @@
 
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+
+
     font-family: 'Montserrat',  sans-serif;
 }
 
+
+/* Head */
+
 .header {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,4 +77,112 @@ body {
 
 .btn:hover {
     background: #ab64e5;
+}
+
+/* Card */
+
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+
+    width: 360px;
+    padding: 30px;
+    border-radius: 5px;
+
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(57, 75, 70, 0.24);
+}
+
+.card::before {
+    content: '';
+
+
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    z-index: -1;
+    /* display: block; */
+    
+    width: calc(100% - 20px);
+    height: 100%;
+    
+    
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(57, 75, 70, 0.24);
+    
+}
+
+.card-city {
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card-city span {
+    display: inline-block;
+    vertical-align: text-top;
+
+    padding: 3px 5px;
+    border-radius: 5px;
+    
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+
+
+    color: #fff;
+    background: #9CEFA9;
+
+}
+
+.card-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-value {
+    color: #000;
+    font-style: normal;
+    font-size: 82px;
+    line-height: 1;
+}
+
+.card-value sup {
+    font-size: 50%;
+}
+
+
+.card-img {
+
+}
+
+.card-description {
+    font-size: 20px;
+    line-height: normal;
+}
+
+.footer {
+    
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 4px 15px;
+    
+    background-color: #EEEEEE;
+    
+    line-height: 1;
+    font-size: 20px;
+}
+
+.footer a {
+    color: #083D2A;
+    text-decoration: none;
+
 }
