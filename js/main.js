@@ -13,7 +13,7 @@ const input = document.querySelector('#inputCity');
 
 
 // Слушаем отправку формы
-form.onsubmit = function(e) {
+form.onsubmit = function (e) {
     //  Отменяем отправку формы
     e.preventDefault();
 
@@ -22,40 +22,49 @@ form.onsubmit = function(e) {
     let city = input.value.trim();
 
     // Адрес запроса 
-    const url  = `http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`;
+    const url = `http://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${city}`;
 
     // Выполнение запроса 
     fetch(url)
         .then((response) => {
             return response.json();
-    }) 
-    
-    .then((data) => {
-        console.log(data);
-        console.log(data.location.name);
-        console.log(data.location.country);
-        console.log(data.current.temp_c);
-        console.log(data.current.condition.text);
+        })
 
+        .then((data) => {
 
-        // Отображаем на странице
-        // Разметка для карточки  
-    const html = `
-         <div class="card">
-            <h2 class="card-city">${data.location.name}<span>${data.location.country}</span></h2>
-            <div class="card-weather">
-                <div class="card-value">${data.current.temp_c}<sup>°c</sup></div>
-                <img class="card-img" src="img/CloudRain.png" alt="weather icon">
-            </div>
-        <div class="card-description">
-            ${data.current.condition.text}
-        </div>
-    </div>
-    `;
+            console.log(data);
+            
+            
 
-    // Отображаем карточку на странице
+            if (data.error) {
 
-        header.insertAdjacentHTML('afterend', html);
-    });
+                
+
+            } else {
+
+                // Отображаем полученные данные в карточке 
+
+                // Удаляем прошлую карточку 
+
+                const oldCard = document.querySelector('.card')
+                if (oldCard) oldCard.remove();
+
+                // Разметка для карточки  
+                const html = `
+                    <div class="card">
+                            <h2 class="card-city">${data.location.name}<span>${data.location.country}</span></h2>
+                            <div class="card-weather">
+                                <div class="card-value">${data.current.temp_c}<sup>°c</sup></div>
+                                <img class="card-img" src="img/CloudRain.png" alt="weather icon">
+                            </div>
+                        <div class="card-description">
+                            ${data.current.condition.text}
+                        </div>
+                    </div>
+                    `;
+                // Отображаем карточку на странице
+                header.insertAdjacentHTML('afterend', html);
+            }
+        });
 
 }
