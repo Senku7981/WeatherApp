@@ -10,6 +10,15 @@ const header = document.querySelector('#header');
 const form = document.querySelector('#form');
 const input = document.querySelector('#inputCity');
 
+const removeCard = () => {
+    const oldCard = document.querySelector('.card') 
+    if (oldCard) oldCard.remove();
+}
+
+const showError = (errorMessage) => {
+    const html = `<div class="card">${errorMessage}</div>`
+    header.insertAdjacentHTML('afterend', html);
+}
 
 
 // Слушаем отправку формы
@@ -37,25 +46,13 @@ form.onsubmit = function (e) {
             
 
             if (data.error) {
-                
-                
-                // Удаляем прошлую карточку 
-
-                const oldCard = document.querySelector('.card') // повторяющийся кусок кода
-                if (oldCard) oldCard.remove();
-
-                const html = `<div class="card">${data.error.message}</div>`
-                header.insertAdjacentHTML('afterend', html);
-
+                removeCard();
+                showError(data.error.message);
 
             } else {
 
                 // Отображаем полученные данные в карточке 
-
-                // Удаляем прошлую карточку 
-
-                const oldCard = document.querySelector('.card') // повторяющийся кусок кода
-                if (oldCard) oldCard.remove();
+                removeCard();
 
                 // Разметка для карточки  
                 const html = `
