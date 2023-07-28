@@ -37,8 +37,16 @@ form.onsubmit = function (e) {
             
 
             if (data.error) {
-
                 
+                
+                // Удаляем прошлую карточку 
+
+                const oldCard = document.querySelector('.card') // повторяющийся кусок кода
+                if (oldCard) oldCard.remove();
+
+                const html = `<div class="card">${data.error.message}</div>`
+                header.insertAdjacentHTML('afterend', html);
+
 
             } else {
 
@@ -46,7 +54,7 @@ form.onsubmit = function (e) {
 
                 // Удаляем прошлую карточку 
 
-                const oldCard = document.querySelector('.card')
+                const oldCard = document.querySelector('.card') // повторяющийся кусок кода
                 if (oldCard) oldCard.remove();
 
                 // Разметка для карточки  
